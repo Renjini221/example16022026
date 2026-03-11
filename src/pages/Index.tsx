@@ -8,7 +8,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const reviews = [
-  { name: "Priya S.", text: "The quality is exceptional. My Luna layered necklace gets compliments every single day!", rating: 5 },
+  { name: "Priya S.", text: "The quality is exceptional. My Selah layered necklace gets compliments every single day!", rating: 5 },
   { name: "Ananya M.", text: "Beautiful packaging and fast delivery. The earrings are even prettier in person.", rating: 5 },
   { name: "Riya K.", text: "I've been wearing my pearl drops daily for 3 months — still looks brand new. Worth every penny.", rating: 4 },
 ];
