@@ -102,5 +102,8 @@ const ProductDetail = () => {
           DM Us to Order
         </a>
       </div>
+    </div>
+  );
+};
 
 export default ProductDetail;
