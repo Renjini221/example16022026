@@ -166,10 +166,10 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border px-4 py-6 text-center">
         <p className="font-serif text-sm text-foreground">
-          Luna <span className="text-gold">Ornaments</span>
-        </p>
-        <p className="mt-1 text-xs text-muted-foreground">
-          Handcrafted with love in India
+           Selah <span className="text-gold">Jewelry</span>
+         </p>
+         <p className="mt-1 text-xs text-muted-foreground">
+           Handcrafted with love
         </p>
       </footer>
     </div>
