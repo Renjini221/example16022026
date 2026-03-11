@@ -20,7 +20,7 @@ const Index = () => {
   const handleNewsletter = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast.success("Welcome to the Luna family! ✨");
+      toast.success("Welcome to the Selah family! ✨");
       setEmail("");
     }
   };
