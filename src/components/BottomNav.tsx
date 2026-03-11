@@ -1,17 +1,13 @@
-import { Home, ShoppingBag, ShoppingCart, User } from "lucide-react";
+import { Home, ShoppingBag } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { useCart } from "@/context/CartContext";
 
 const navItems = [
   { icon: Home, label: "Home", path: "/" },
   { icon: ShoppingBag, label: "Shop", path: "/shop" },
-  { icon: ShoppingCart, label: "Cart", path: "/cart" },
-  { icon: User, label: "Profile", path: "/profile" },
 ];
 
 const BottomNav = () => {
   const location = useLocation();
-  const { totalItems } = useCart();
 
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-md safe-area-bottom">
