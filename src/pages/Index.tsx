@@ -8,7 +8,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const reviews = [
-  { name: "Priya S.", text: "The quality is exceptional. My Luna layered necklace gets compliments every single day!", rating: 5 },
+  { name: "Priya S.", text: "The quality is exceptional. My Selah layered necklace gets compliments every single day!", rating: 5 },
   { name: "Ananya M.", text: "Beautiful packaging and fast delivery. The earrings are even prettier in person.", rating: 5 },
   { name: "Riya K.", text: "I've been wearing my pearl drops daily for 3 months — still looks brand new. Worth every penny.", rating: 4 },
 ];
@@ -20,7 +20,7 @@ const Index = () => {
   const handleNewsletter = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast.success("Welcome to the Luna family! ✨");
+      toast.success("Welcome to the Selah family! ✨");
       setEmail("");
     }
   };
@@ -30,7 +30,7 @@ const Index = () => {
       {/* Header */}
       <header className="sticky top-0 z-40 flex items-center justify-center border-b border-border bg-background/95 backdrop-blur-md px-4 py-3">
         <h1 className="font-serif text-xl font-semibold tracking-wide text-foreground">
-          Luna <span className="text-gold">Ornaments</span>
+           Selah <span className="text-gold">Jewelry</span>
         </h1>
       </header>
 
@@ -38,7 +38,7 @@ const Index = () => {
       <section className="relative overflow-hidden">
         <img
           src={heroImage}
-          alt="Model wearing Luna Ornaments jewellery"
+          alt="Model wearing Selah jewelry"
           className="h-[70vh] w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
@@ -140,7 +140,7 @@ const Index = () => {
       <section className="px-4 py-10 text-center">
         <Mail className="mx-auto h-8 w-8 text-gold" />
         <h2 className="mt-3 font-serif text-xl font-semibold text-foreground">
-          Join the Luna Family
+          Join the Selah Family
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
           Get early access to new drops & exclusive offers
@@ -166,10 +166,10 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border px-4 py-6 text-center">
         <p className="font-serif text-sm text-foreground">
-          Luna <span className="text-gold">Ornaments</span>
-        </p>
-        <p className="mt-1 text-xs text-muted-foreground">
-          Handcrafted with love in India
+           Selah <span className="text-gold">Jewelry</span>
+         </p>
+         <p className="mt-1 text-xs text-muted-foreground">
+           Handcrafted with love
         </p>
       </footer>
     </div>
