@@ -22,13 +22,8 @@ const BottomNav = () => {
                 isActive ? "text-gold" : "text-muted-foreground"
               }`}
             >
-              <div className="relative">
+              <div>
                 <Icon className="h-5 w-5" strokeWidth={isActive ? 2.5 : 1.5} />
-                {label === "Cart" && totalItems > 0 && (
-                  <span className="absolute -right-2 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-gold text-[10px] font-semibold text-primary-foreground">
-                    {totalItems}
-                  </span>
-                )}
               </div>
               <span className="text-[10px] font-medium">{label}</span>
             </Link>
