@@ -90,9 +90,17 @@ const ProductDetail = () => {
             ))}
           </div>
         </div>
+
+        {/* DM to Order */}
+        <a
+          href="https://ig.me/m/_selah_jewelry_"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-sm font-semibold text-primary-foreground active:scale-[0.98] transition-transform"
+        >
+          <MessageCircle className="h-4 w-4" />
+          DM Us to Order
+        </a>
       </div>
-    </div>
-  );
-};
 
 export default ProductDetail;
