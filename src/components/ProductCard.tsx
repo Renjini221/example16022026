@@ -1,8 +1,6 @@
-import { Star, ShoppingBag } from "lucide-react";
+import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Product } from "@/data/products";
-import { useCart } from "@/context/CartContext";
-import { toast } from "sonner";
 
 interface ProductCardProps {
   product: Product;
@@ -10,15 +8,6 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
-  const { addToCart } = useCart();
-
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    addToCart(product, product.colors[0]);
-    toast.success(`${product.name} added to cart`);
-  };
-
   return (
     <Link
       to={`/product/${product.id}`}
@@ -54,24 +43,15 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             {product.rating} ({product.reviews})
           </span>
         </div>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1.5">
-            <span className="font-serif text-base font-semibold text-foreground">
-              ₹{product.price.toLocaleString()}
+        <div className="flex items-center gap-1.5">
+          <span className="font-serif text-base font-semibold text-foreground">
+            ₹{product.price.toLocaleString()}
+          </span>
+          {product.originalPrice && (
+            <span className="text-xs text-muted-foreground line-through">
+              ₹{product.originalPrice.toLocaleString()}
             </span>
-            {product.originalPrice && (
-              <span className="text-xs text-muted-foreground line-through">
-                ₹{product.originalPrice.toLocaleString()}
-              </span>
-            )}
-          </div>
-          <button
-            onClick={handleAddToCart}
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-gold text-primary-foreground transition-transform active:scale-90"
-            aria-label="Add to cart"
-          >
-            <ShoppingBag className="h-3.5 w-3.5" />
-          </button>
+          )}
         </div>
       </div>
     </Link>
