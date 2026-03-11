@@ -140,7 +140,7 @@ const Index = () => {
       <section className="px-4 py-10 text-center">
         <Mail className="mx-auto h-8 w-8 text-gold" />
         <h2 className="mt-3 font-serif text-xl font-semibold text-foreground">
-          Join the Luna Family
+          Join the Selah Family
         </h2>
         <p className="mt-1 text-sm text-muted-foreground">
           Get early access to new drops & exclusive offers
