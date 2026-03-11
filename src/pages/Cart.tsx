@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
 import { ArrowLeft, Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
-import { toast } from "sonner";
+
 
 const Cart = () => {
   const { items, updateQuantity, removeFromCart, totalPrice } = useCart();
