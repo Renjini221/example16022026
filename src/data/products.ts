@@ -74,7 +74,7 @@ export const products: Product[] = [
   },
   {
     id: "5",
-    name: "Luna Layered Necklace",
+    name: "Selah Layered Necklace",
     price: 4500,
     originalPrice: 5625,
     image: productNecklaceLayered,
