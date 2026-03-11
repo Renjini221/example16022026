@@ -38,7 +38,7 @@ const Index = () => {
       <section className="relative overflow-hidden">
         <img
           src={heroImage}
-          alt="Model wearing Luna Ornaments jewellery"
+          alt="Model wearing Selah jewelry"
           className="h-[70vh] w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
