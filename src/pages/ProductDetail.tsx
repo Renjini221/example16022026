@@ -93,7 +93,7 @@ const ProductDetail = () => {
 
         {/* DM to Order */}
         <a
-          href="https://ig.me/m/_selah_jewelry_"
+          href="https://www.instagram.com/direct/t/18058408121391689/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-sm font-semibold text-primary-foreground active:scale-[0.98] transition-transform"
