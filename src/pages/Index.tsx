@@ -30,7 +30,7 @@ const Index = () => {
       {/* Header */}
       <header className="sticky top-0 z-40 flex items-center justify-center border-b border-border bg-background/95 backdrop-blur-md px-4 py-3">
         <h1 className="font-serif text-xl font-semibold tracking-wide text-foreground">
-          Luna <span className="text-gold">Ornaments</span>
+           Selah <span className="text-gold">Jewelry</span>
         </h1>
       </header>
 
