@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { products } from "@/data/products";
-import { Star, ArrowLeft } from "lucide-react";
+import { Star, ArrowLeft, MessageCircle } from "lucide-react";
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>();
