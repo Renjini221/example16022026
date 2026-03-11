@@ -101,12 +101,14 @@ const Cart = () => {
                 ₹{totalPrice.toLocaleString()}
               </span>
             </div>
-            <button
-              onClick={() => toast.success("Order placed! Thank you ✨")}
-              className="w-full rounded-full bg-gold py-3.5 text-sm font-semibold text-primary-foreground active:scale-[0.98] transition-transform"
+            <a
+              href="https://instagram.com/lunaornaments"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-2 rounded-full bg-gold py-3.5 text-sm font-semibold text-primary-foreground active:scale-[0.98] transition-transform"
             >
-              Proceed to Checkout
-            </button>
+              Order via Instagram DM
+            </a>
           </div>
         </>
       )}
