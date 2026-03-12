@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
-import { products } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 import ProductCard from "@/components/ProductCard";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -16,11 +16,12 @@ const Shop = () => {
   const initialCat = searchParams.get("category") || "All";
   const [activeCategory, setActiveCategory] = useState(initialCat);
   const [activeSub, setActiveSub] = useState("All");
+  const { products, loading } = useProducts();
 
   const filtered = useMemo(() => {
     let result = products;
     if (activeCategory === "New Arrivals") {
-      result = result.filter((p) => p.isNew);
+      result = result.filter((p) => p.is_new);
     } else if (activeCategory !== "All") {
       result = result.filter((p) => p.category === activeCategory);
     }
@@ -28,11 +29,10 @@ const Shop = () => {
       result = result.filter((p) => p.subcategory === activeSub);
     }
     return result;
-  }, [activeCategory, activeSub]);
+  }, [activeCategory, activeSub, products]);
 
   return (
     <div className="min-h-screen pb-20">
-      {/* Header */}
       <header className="sticky top-0 z-40 flex items-center gap-3 border-b border-border bg-background/95 backdrop-blur-md px-4 py-3">
         <Link to="/" className="text-foreground">
           <ArrowLeft className="h-5 w-5" />
@@ -40,7 +40,6 @@ const Shop = () => {
         <h1 className="font-serif text-lg font-semibold text-foreground">Shop</h1>
       </header>
 
-      {/* Categories */}
       <div className="px-4 pt-4">
         <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
           {categories.map((cat) => (
@@ -61,7 +60,6 @@ const Shop = () => {
           ))}
         </div>
 
-        {/* Subcategories */}
         {subcategories[activeCategory] && (
           <div className="mt-2 flex gap-2 overflow-x-auto pb-2 no-scrollbar">
             {subcategories[activeCategory].map((sub) => (
@@ -81,14 +79,19 @@ const Shop = () => {
         )}
       </div>
 
-      {/* Products */}
-      <div className="px-4 py-4 grid grid-cols-2 gap-4">
-        {filtered.map((product, i) => (
-          <ProductCard key={product.id} product={product} index={i} />
-        ))}
-      </div>
+      {loading ? (
+        <div className="flex justify-center py-20">
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-gold border-t-transparent" />
+        </div>
+      ) : (
+        <div className="px-4 py-4 grid grid-cols-2 gap-4">
+          {filtered.map((product, i) => (
+            <ProductCard key={product.id} product={product} index={i} />
+          ))}
+        </div>
+      )}
 
-      {filtered.length === 0 && (
+      {!loading && filtered.length === 0 && (
         <div className="flex flex-col items-center justify-center py-20 text-center">
           <p className="text-muted-foreground">No products found</p>
         </div>
