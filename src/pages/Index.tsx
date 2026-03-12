@@ -29,10 +29,18 @@ const Index = () => {
   return (
     <div className="min-h-screen pb-20">
       {/* Header */}
-      <header className="sticky top-0 z-40 flex items-center justify-center border-b border-border bg-background/95 backdrop-blur-md px-4 py-3">
+      <header className="sticky top-0 z-40 flex items-center justify-between border-b border-border bg-background/95 backdrop-blur-md px-4 py-3">
+        <div className="w-8" /> {/* Spacer for centering */}
         <h1 className="font-serif text-xl font-semibold tracking-wide text-foreground">
            Selah <span className="text-gold">Jewelry</span>
         </h1>
+        <Link
+          to="/admin"
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground transition-colors hover:bg-gold hover:text-primary-foreground"
+          title="Admin"
+        >
+          <span className="text-xs font-bold">A</span>
+        </Link>
       </header>
 
       {/* Hero */}
