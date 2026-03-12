@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Star, ArrowRight, Mail } from "lucide-react";
-import { products } from "@/data/products";
+import { useProducts } from "@/hooks/useProducts";
 import ProductCard from "@/components/ProductCard";
 import heroImage from "@/assets/hero-model.jpg";
 import offerBanner from "@/assets/offer-banner.jpg";
@@ -15,6 +15,7 @@ const reviews = [
 
 const Index = () => {
   const [email, setEmail] = useState("");
+  const { products, loading } = useProducts();
   const featured = products.slice(0, 4);
 
   const handleNewsletter = (e: React.FormEvent) => {
@@ -83,11 +84,17 @@ const Index = () => {
             View All
           </Link>
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-4">
-          {featured.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex justify-center py-10">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-gold border-t-transparent" />
+          </div>
+        ) : (
+          <div className="mt-4 grid grid-cols-2 gap-4">
+            {featured.map((product, i) => (
+              <ProductCard key={product.id} product={product} index={i} />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Offer Banner */}

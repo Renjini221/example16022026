@@ -1,9 +1,9 @@
 import { Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Product } from "@/data/products";
+import type { DbProduct } from "@/hooks/useProducts";
 
 interface ProductCardProps {
-  product: Product;
+  product: DbProduct;
   index?: number;
 }
 
@@ -16,19 +16,19 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
     >
       <div className="relative overflow-hidden rounded-lg bg-card">
         <img
-          src={product.image}
+          src={product.image_url}
           alt={product.name}
           className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
         />
-        {product.isNew && (
+        {product.is_new && (
           <span className="absolute left-2 top-2 rounded-full bg-gold px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary-foreground">
             New
           </span>
         )}
-        {product.originalPrice && (
+        {product.original_price && (
           <span className="absolute right-2 top-2 rounded-full bg-accent px-2.5 py-0.5 text-[10px] font-semibold text-accent-foreground">
-            {Math.round((1 - product.price / product.originalPrice) * 100)}% Off
+            {Math.round((1 - product.price / product.original_price) * 100)}% Off
           </span>
         )}
       </div>
@@ -47,9 +47,9 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
           <span className="font-serif text-base font-semibold text-foreground">
             ₹{product.price.toLocaleString()}
           </span>
-          {product.originalPrice && (
+          {product.original_price && (
             <span className="text-xs text-muted-foreground line-through">
-              ₹{product.originalPrice.toLocaleString()}
+              ₹{product.original_price.toLocaleString()}
             </span>
           )}
         </div>
