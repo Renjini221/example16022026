@@ -16,7 +16,8 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
     >
       <div className="relative overflow-hidden rounded-lg bg-card">
        <img
-  src={`/${product.image_url}`}
+<img
+  src={product.image_url.replace(/^\/\//, "/")}
   alt={product.name}
   className="aspect-[4/5] w-full object-cover transition-transform duration-500 group-hover:scale-105"
   loading="lazy"
