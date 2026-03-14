@@ -15,7 +15,6 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
       style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "forwards" }}
     >
       <div className="relative overflow-hidden rounded-lg bg-card">
-       <img
 <img
   src={product.image_url.replace(/^\/\//, "/")}
   alt={product.name}
