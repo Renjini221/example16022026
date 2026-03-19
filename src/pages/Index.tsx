@@ -16,7 +16,7 @@ const reviews = [
 const Index = () => {
   const [email, setEmail] = useState("");
   const { products, loading } = useProducts();
-  const featured = products.slice(0, 5);
+  const featured = products;
 
   const handleNewsletter = (e: React.FormEvent) => {
     e.preventDefault();
