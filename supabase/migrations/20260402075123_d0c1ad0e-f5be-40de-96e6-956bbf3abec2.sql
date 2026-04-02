@@ -1,0 +1,1 @@
+ALTER TABLE public.products ADD COLUMN image_url_2 text DEFAULT null;
