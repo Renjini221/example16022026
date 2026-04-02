@@ -80,7 +80,7 @@ const Admin = () => {
       original_price: p.original_price ? String(p.original_price) : "",
       image_url: p.image_url,
       category: p.category,
-      subcategory: p.subcategory,
+      subcategory: p.subcategory || "General",
       rating: String(p.rating),
       reviews: String(p.reviews),
       description: p.description,
