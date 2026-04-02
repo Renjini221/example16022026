@@ -80,6 +80,7 @@ const Admin = () => {
       price: String(p.price),
       original_price: p.original_price ? String(p.original_price) : "",
       image_url: p.image_url,
+      image_url_2: (p as any).image_url_2 || "",
       category: p.category,
       subcategory: p.subcategory || "General",
       rating: String(p.rating),
