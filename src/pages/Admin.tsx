@@ -99,6 +99,7 @@ const Admin = () => {
       price: parseInt(form.price),
       original_price: form.original_price ? parseInt(form.original_price) : null,
       image_url: form.image_url,
+      image_url_2: form.image_url_2 || null,
       category: form.category,
       subcategory: form.subcategory,
       rating: parseFloat(form.rating),
