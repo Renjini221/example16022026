@@ -19,6 +19,7 @@ const emptyForm = {
   reviews: "0",
   description: "",
   is_new: false,
+  stock_out: false,
   colors: "Gold",
 };
 
