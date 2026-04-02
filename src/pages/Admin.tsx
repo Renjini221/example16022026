@@ -251,6 +251,15 @@ const Admin = () => {
               />
               Mark as New Arrival
             </label>
+            <label className="flex items-center gap-2 text-sm text-foreground">
+              <input
+                type="checkbox"
+                checked={form.stock_out}
+                onChange={(e) => setForm({ ...form, stock_out: e.target.checked })}
+                className="accent-destructive"
+              />
+              Mark as Stock Out
+            </label>
             <button
               type="submit"
               className="w-full rounded-lg bg-gold py-3 text-sm font-semibold text-primary-foreground active:scale-[0.98] transition-transform"
