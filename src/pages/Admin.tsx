@@ -108,6 +108,7 @@ const Admin = () => {
       reviews: parseInt(form.reviews),
       description: form.description,
       is_new: form.is_new,
+      stock_out: form.stock_out,
       colors: form.colors.split(",").map((c) => c.trim()).filter(Boolean),
     };
 
