@@ -13,7 +13,7 @@ const emptyForm = {
   original_price: "",
   image_url: "",
   category: "Earrings",
-  subcategory: "",
+  subcategory: "General",
   rating: "4.5",
   reviews: "0",
   description: "",
@@ -80,7 +80,7 @@ const Admin = () => {
       original_price: p.original_price ? String(p.original_price) : "",
       image_url: p.image_url,
       category: p.category,
-      subcategory: p.subcategory,
+      subcategory: p.subcategory || "General",
       rating: String(p.rating),
       reviews: String(p.reviews),
       description: p.description,
@@ -187,25 +187,16 @@ const Admin = () => {
               onChange={(e) => setForm({ ...form, image_url: e.target.value })}
               className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none"
             />
-            <div className="grid grid-cols-2 gap-3">
-              <select
-                value={form.category}
-                onChange={(e) => setForm({ ...form, category: e.target.value })}
-                className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground focus:border-gold focus:outline-none"
-              >
-                <option>Earrings</option>
-                <option>Necklaces</option>
-                <option>Bracelets</option>
-                <option>Rings</option>
-              </select>
-              <input
-                required
-                placeholder="Subcategory"
-                value={form.subcategory}
-                onChange={(e) => setForm({ ...form, subcategory: e.target.value })}
-                className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none"
-              />
-            </div>
+            <select
+              value={form.category}
+              onChange={(e) => setForm({ ...form, category: e.target.value })}
+              className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground focus:border-gold focus:outline-none"
+            >
+              <option>Earrings</option>
+              <option>Necklaces</option>
+              <option>Bracelets</option>
+              <option>Rings</option>
+            </select>
             <div className="grid grid-cols-2 gap-3">
               <input
                 type="number"
