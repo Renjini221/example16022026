@@ -13,7 +13,7 @@ const emptyForm = {
   original_price: "",
   image_url: "",
   category: "Earrings",
-  subcategory: "",
+  subcategory: "General",
   rating: "4.5",
   reviews: "0",
   description: "",
