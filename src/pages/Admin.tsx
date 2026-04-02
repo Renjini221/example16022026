@@ -88,6 +88,7 @@ const Admin = () => {
       reviews: String(p.reviews),
       description: p.description,
       is_new: p.is_new,
+      stock_out: (p as any).stock_out || false,
       colors: p.colors.join(", "),
     });
     setShowForm(true);
