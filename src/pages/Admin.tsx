@@ -289,6 +289,7 @@ const Admin = () => {
                 <p className="text-xs text-muted-foreground">
                   ₹{p.price.toLocaleString()} · {p.category}
                   {p.is_new && <span className="ml-1 text-gold">· New</span>}
+                  {(p as any).stock_out && <span className="ml-1 text-destructive">· Stock Out</span>}
                 </p>
               </div>
               <div className="flex gap-2 flex-shrink-0">
