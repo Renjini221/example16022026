@@ -22,6 +22,7 @@ export type Database = {
           description: string
           id: string
           image_url: string
+          image_url_2: string | null
           is_new: boolean
           name: string
           original_price: number | null
@@ -38,6 +39,7 @@ export type Database = {
           description?: string
           id?: string
           image_url: string
+          image_url_2?: string | null
           is_new?: boolean
           name: string
           original_price?: number | null
@@ -54,6 +56,7 @@ export type Database = {
           description?: string
           id?: string
           image_url?: string
+          image_url_2?: string | null
           is_new?: boolean
           name?: string
           original_price?: number | null
