@@ -183,13 +183,21 @@ const Admin = () => {
                 className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none"
               />
             </div>
-            <input
-              required
-              placeholder="Image URL"
-              value={form.image_url}
-              onChange={(e) => setForm({ ...form, image_url: e.target.value })}
-              className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none"
-            />
+            <div className="space-y-2">
+              <input
+                required
+                placeholder="Image URL (main)"
+                value={form.image_url}
+                onChange={(e) => setForm({ ...form, image_url: e.target.value })}
+                className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none"
+              />
+              <input
+                placeholder="Image URL 2 (optional)"
+                value={form.image_url_2}
+                onChange={(e) => setForm({ ...form, image_url_2: e.target.value })}
+                className="w-full rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none"
+              />
+            </div>
             <select
               value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
