@@ -29,6 +29,7 @@ export type Database = {
           price: number
           rating: number
           reviews: number
+          stock_out: boolean
           subcategory: string
           updated_at: string
         }
@@ -46,6 +47,7 @@ export type Database = {
           price: number
           rating?: number
           reviews?: number
+          stock_out?: boolean
           subcategory: string
           updated_at?: string
         }
@@ -63,6 +65,7 @@ export type Database = {
           price?: number
           rating?: number
           reviews?: number
+          stock_out?: boolean
           subcategory?: string
           updated_at?: string
         }

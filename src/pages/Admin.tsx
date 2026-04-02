@@ -19,6 +19,7 @@ const emptyForm = {
   reviews: "0",
   description: "",
   is_new: false,
+  stock_out: false,
   colors: "Gold",
 };
 
@@ -87,6 +88,7 @@ const Admin = () => {
       reviews: String(p.reviews),
       description: p.description,
       is_new: p.is_new,
+      stock_out: (p as any).stock_out || false,
       colors: p.colors.join(", "),
     });
     setShowForm(true);
@@ -106,6 +108,7 @@ const Admin = () => {
       reviews: parseInt(form.reviews),
       description: form.description,
       is_new: form.is_new,
+      stock_out: form.stock_out,
       colors: form.colors.split(",").map((c) => c.trim()).filter(Boolean),
     };
 
@@ -248,6 +251,15 @@ const Admin = () => {
               />
               Mark as New Arrival
             </label>
+            <label className="flex items-center gap-2 text-sm text-foreground">
+              <input
+                type="checkbox"
+                checked={form.stock_out}
+                onChange={(e) => setForm({ ...form, stock_out: e.target.checked })}
+                className="accent-destructive"
+              />
+              Mark as Stock Out
+            </label>
             <button
               type="submit"
               className="w-full rounded-lg bg-gold py-3 text-sm font-semibold text-primary-foreground active:scale-[0.98] transition-transform"
@@ -277,6 +289,7 @@ const Admin = () => {
                 <p className="text-xs text-muted-foreground">
                   ₹{p.price.toLocaleString()} · {p.category}
                   {p.is_new && <span className="ml-1 text-gold">· New</span>}
+                  {(p as any).stock_out && <span className="ml-1 text-destructive">· Stock Out</span>}
                 </p>
               </div>
               <div className="flex gap-2 flex-shrink-0">
